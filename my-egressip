@@ -2,14 +2,13 @@ apiVersion: k8s.ovn.org/v1
 kind: EgressIP
 metadata:
   name: my-egressip
-  namespace: pruebas-egress
 spec:
   egressIPs:
     - 10.5.248.57
     - 10.5.248.58
-  podSelector:
-    matchLabels:
-      role: worker
   namespaceSelector:
     matchLabels:
       name: pruebas-egress
+  podSelector:
+    matchLabels:
+      role: worker
