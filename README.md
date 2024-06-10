@@ -6,7 +6,7 @@ Para configurar el vamos primero necesitar ejeccutar una secuencia de tareas que
 5. Definir la política de red necesaria.
 
 ```sh
-oc new-project prueba-egress
+oc new-project pruebas-egress
 ```
 Marcamos los nodos como direccionables.
 ```sh
@@ -24,7 +24,7 @@ spec:
     - 10.5.248.58
   namespaceSelector:
     matchLabels:
-      name: prueba-egress
+      name: pruebas-egress
   podSelector:
     matchLabels:
       role: worker
@@ -34,7 +34,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: oracle-db
-  namespace: prueba-egress
+  namespace: pruebas-egress
 spec:
   type: ExternalName
   externalName: 10.100.100.177
@@ -48,7 +48,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: allow-oracle-db
-  namespace: prueba-egress
+  namespace: pruebas-egress
 spec:
   podSelector:
     matchLabels:
