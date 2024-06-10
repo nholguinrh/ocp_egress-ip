@@ -5,8 +5,9 @@ Para configurar el vamos primero necesitar ejeccutar una secuencia de tareas que
 4. crear el servicio para la base de datos Oracle.
 5. Definir la política de red necesaria.
 
-####Code Blocks (Indented style)
+```sh
 oc new-project prueba-egress
+```
 
 oc label node infra-0.ocp02.promnet.com.sv k8s.ovn.org/egress-assignable=""
 oc label node infra-1.ocp02.promnet.com.sv k8s.ovn.org/egress-assignable=""
