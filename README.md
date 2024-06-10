@@ -8,10 +8,11 @@ Para configurar el vamos primero necesitar ejeccutar una secuencia de tareas que
 ```sh
 oc new-project prueba-egress
 ```
-
+Marcamos los nodos como direccionables.
+```sh
 oc label node infra-0.ocp02.promnet.com.sv k8s.ovn.org/egress-assignable=""
 oc label node infra-1.ocp02.promnet.com.sv k8s.ovn.org/egress-assignable=""
-
+```
 ```yaml
 apiVersion: k8s.ovn.org/v1
 kind: EgressIP
